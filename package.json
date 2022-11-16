@@ -1,0 +1,35 @@
+{
+  "name": "battery-notification",
+  "version": "1.0.0",
+  "description": "Get notified on when you need to plug/unplug your charger to preserve battery life.",
+  "main": "src/cli.js",
+  "scripts": {
+    "build": "sudo npm install -g .",
+    "lint": "npx eslint . --fix"
+  },
+  "bin": {
+    "battery": "./src/cli.js",
+    "battery-notification": "./src/cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SanjaySunil/battery-notification.git"
+  },
+  "author": "Sanjay Sunil",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SanjaySunil/battery-notification/issues"
+  },
+  "homepage": "https://github.com/SanjaySunil/battery-notification#readme",
+  "dependencies": {
+    "battery-level": "^3.0.0",
+    "commander": "^9.4.0",
+    "is-charging": "^2.0.0",
+    "node-notifier": "^10.0.1",
+    "readme-components": "^1.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.23.1",
+    "eslint-config-google": "^0.14.0"
+  }
+}
