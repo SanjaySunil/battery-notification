@@ -20,6 +20,12 @@
   "bugs": {
     "url": "https://github.com/SanjaySunil/battery-notification/issues"
   },
+  "keywords": [
+    "battery",
+    "notification",
+    "reminder",
+    "charging"
+  ],
   "homepage": "https://github.com/SanjaySunil/battery-notification#readme",
   "dependencies": {
     "battery-level": "^3.0.0",
