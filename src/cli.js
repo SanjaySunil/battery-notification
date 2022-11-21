@@ -11,7 +11,7 @@ const program = new Command();
 let lowStateNotification = false;
 let highStateNotification = false;
 
-const isValid = (value) => {
+const isValidPercentage = (value) => {
   if (
     value % 1 !== 0
   ) {
@@ -19,7 +19,7 @@ const isValid = (value) => {
   } else if (parseInt(value) > 100 || parseInt(value) < 0) {
     throw new InvalidArgumentError('Not a threshold between 0-100%.');
   } else {
-    return value;
+    return parseInt(value);
   }
 };
 
@@ -29,13 +29,14 @@ program
     .version(packageData.version);
 
 program
-    .option('-l, --low <value>', 'Low battery level threshold', isValid)
-    .option('-h, --high <value>', 'High battery level threshold', isValid)
+    .option('-l, --low <value>', 'Low battery level threshold', isValidPercentage)
+    .option('-h, --high <value>', 'High battery level threshold', isValidPercentage)
     .action((options) => {
       if (options.low == undefined) options.low = 20;
       if (options.high == undefined) options.high = 80;
 
       if (options.low >= options.high) {
+        // console.log(options.low, options.high);
         throw new InvalidArgumentError('High battery threshold must be greater than low battery threshold.');
       }
 
